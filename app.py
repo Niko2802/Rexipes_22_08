@@ -137,7 +137,7 @@ def edit_quote(quotes_id):
 
 @app.route("/quotes/<int:quotes_id>", methods=["DELETE"])
 def delete_quotes(quotes_id):
-    quote = AuthorModel.query.get(quotes_id)
+    quote = QuoteModel.query.get(quotes_id)
     if quote is None:
         return f"Quote with id {quotes_id} not found.", 404
     db.session.delete(quote)
